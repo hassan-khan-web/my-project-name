@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+jinja2
+redis>=4.6.0
+python-docx

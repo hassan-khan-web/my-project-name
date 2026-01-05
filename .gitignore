@@ -1,0 +1,35 @@
+# Virtual Environment
+my_venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env
+
+# Personal documents (optional - uncomment if you want to keep resumes private)
+# *.docx
+# Hassan_Khan_resume.docx
+# Resume.docx
