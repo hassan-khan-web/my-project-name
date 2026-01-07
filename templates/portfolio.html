@@ -1,85 +1,63 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ resume.title }}</title>
-    <link rel="stylesheet" href="/static/style.css" />
-  </head>
-  <body>
-    <main class="page container">
-      <section class="hero slide-in">
-        <div class="hero-left">
-          <img class="avatar" src="{{ photo_url }}" alt="photo" />
-        </div>
-        <div class="hero-right">
-          <h1 class="name">{{ resume.name }}</h1>
-          {% if resume.summary %}
-            <p class="summary">{{ resume.summary }}</p>
-          {% endif %}
-          <div class="links">
-            {% if resume.linkedin %}
-              <a href="{{ resume.linkedin }}" target="_blank">LinkedIn</a>
-            {% endif %}
-            {% if resume.github %}
-              <a href="{{ resume.github }}" target="_blank">GitHub</a>
-            {% endif %}
-          </div>
-        </div>
-      </section>
 
-      <section class="projects slide-in">
-        <h2>Projects</h2>
-        <div class="project-list">
-          {% if resume.projects %}
-            {% for p in resume.projects %}
-              <article class="project-card">
-                <p>{{ p }}</p>
-              </article>
-            {% endfor %}
-          {% else %}
-            <p>No projects detected in resume. Add project lines starting with "-" or containing "Project".</p>
-          {% endif %}
-        </div>
-      </section>
-
-      <section class="about slide-in">
-        <h2>About / Details</h2>
-        {% for p in resume.paragraphs %}
-          <p>{{ p }}</p>
-        {% endfor %}
-      </section>
-
-      <footer class="foot slide-in">
-        <small>Generated with FastAPI • Cached in Redis</small>
-      </footer>
-    </main>
-
-    <script src="/static/script.js"></script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ name }} | Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ resume.title }}</title>
+  <link rel="stylesheet" href="/static/style.css" />
 </head>
+
 <body>
-
-    <nav class="navbar">
-        <div class="logo">{{ name }}.</div>
-        <div class="visit-counter">Visitor #: {{ views }}</div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">{{ name }}</span></h1>
-            <p>{{ role }}</p>
-            <p>Powered by FastAPI, Redis & Docker.</p>
+  <main class="page container">
+    <section class="hero slide-in">
+      <div class="hero-left">
+        <img class="avatar" src="{{ photo_url }}" alt="photo" />
+      </div>
+      <div class="hero-right">
+        <h1 class="name">{{ resume.name }}</h1>
+        {% if resume.summary %}
+        <p class="summary">{{ resume.summary }}</p>
+        {% endif %}
+        <div class="links">
+          {% if resume.linkedin %}
+          <a href="{{ resume.linkedin }}" target="_blank">LinkedIn</a>
+          {% endif %}
+          {% if resume.github %}
+          <a href="{{ resume.github }}" target="_blank">GitHub</a>
+          {% endif %}
         </div>
+      </div>
     </section>
 
-    </body>
+    <section class="projects slide-in">
+      <h2>Projects</h2>
+      <div class="project-list">
+        {% if resume.projects %}
+        {% for p in resume.projects %}
+        <article class="project-card">
+          <p>{{ p }}</p>
+        </article>
+        {% endfor %}
+        {% else %}
+        <p>No projects detected in resume. Add project lines starting with "-" or containing "Project".</p>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="about slide-in">
+      <h2>About / Details</h2>
+      {% for p in resume.paragraphs %}
+      <p>{{ p }}</p>
+      {% endfor %}
+    </section>
+
+    <footer class="foot slide-in">
+      <small>Generated with FastAPI • Cached in Redis</small>
+    </footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+
 </html>
